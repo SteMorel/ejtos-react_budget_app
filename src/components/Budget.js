@@ -8,24 +8,14 @@ const Budget = () => {
 		const totalExpenses = expenses.reduce((total, item) => {
 			return (total += item.cost);
 		}, 0);
-
-		
 		if(val<totalExpenses) {
-			alert("You cannot reduce the budget that is already allocated!");
+			alert("You have already more expenses allocated!");
 		} else {
 			dispatch({
 				type: 'SET_BUDGET',
 				payload: val,
 			})
-			}
-            if(val>20000) {
-                alert("You cannot increase Budget more than 20000!");
-            } else {
-                dispatch({
-                    type: 'SET_BUDGET',
-                    payload: val,
-                })
-                }
+		}
 	}
 	
 	return (
